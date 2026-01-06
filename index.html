@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakesh Sharma - Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <header class="fixed w-full z-30 top-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="#" class="text-3xl font-bold text-white">Portfolio</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-gray-300 hover:text-cyan-accent px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#about" class="text-gray-300 hover:text-cyan-accent px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#services" class="text-gray-300 hover:text-cyan-accent px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                        <a href="#skills" class="text-gray-300 hover:text-cyan-accent px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="#tools" class="text-gray-300 hover:text-cyan-accent px-3 py-2 rounded-md text-sm font-medium">Tools</a>
+                        <a href="#projects" class="text-gray-300 hover:text-cyan-accent px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="#experience" class="text-gray-300 hover:text-cyan-accent px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                        <a href="#contact" class="text-gray-300 hover:text-cyan-accent px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700"><span class="sr-only">Open main menu</span><svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg><svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg></button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="nav-link text-gray-300 hover:text-cyan-accent hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" class="nav-link text-gray-300 hover:text-cyan-accent hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#services" class="nav-link text-gray-300 hover:text-cyan-accent hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="#skills" class="nav-link text-gray-300 hover:text-cyan-accent hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="#tools" class="nav-link text-gray-300 hover:text-cyan-accent hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Tools</a>
+                <a href="#projects" class="nav-link text-gray-300 hover:text-cyan-accent hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                <a href="#experience" class="nav-link text-gray-300 hover:text-cyan-accent hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Experience</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-cyan-accent hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="min-h-screen flex items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col-reverse md:flex-row items-center justify-between gap-10">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h3 class="text-2xl sm:text-3xl font-bold">Hello, It's Me</h3>
+                    <h1 class="text-4xl sm:text-5xl font-bold my-2">Rakesh Sharma</h1>
+                    <h3 class="text-2xl sm:text-3xl font-bold">And I'm a <span id="typed-text" class="text-cyan-accent"></span></h3>
+                    <p class="mt-4 mb-8 text-gray-300 max-w-lg mx-auto md:mx-0">I enjoy creating responsive, user-friendly websites and building backend solutions that solve real-world problems. Let's build something amazing together.</p>
+                    <a href="https://drive.google.com/file/d/1n69mwQM8ECAXpENZVoPd_redrXLp5fsx/view?usp=drive_link" download class="btn-primary">Download CV</a>
+                </div>
+                <div class="md:w-1/2 flex justify-center mt-10 md:mt-0">
+                   <div class="hexagon-wrapper">
+                        <div class="hexagon-glow"></div>
+                        <div class="hexagon">
+                            <img src="Rakesh.png" alt="Rakesh Sharma Portrait">
+                        </div>
+                   </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="min-h-screen flex items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col md:flex-row items-center justify-between gap-16">
+                 <div class="md:w-1/2 flex justify-center px-4">
+                     <img src="Rakesh1.png" alt="Web Development Conceptual Image" class="rounded-2xl shadow-2xl w-full max-w-md object-cover" style="box-shadow: 0 0 2rem rgba(14, 239, 239, 0.3);">
+                 </div>
+                 <div class="md:w-1/2 text-center md:text-left">
+                     <h2 class="text-4xl sm:text-5xl font-bold mb-2">About <span class="text-cyan-accent">Me</span></h2>
+                     <h3 class="text-2xl font-semibold mb-4">Web Developer & Creative Designer</h3>
+                     <p class="text-gray-300 leading-relaxed space-y-4">
+                         <span>Hello! I’m Rakesh Sharma, a dedicated student and developer with a passion for both technology and creative design. I specialize in building functional websites and crafting visually appealing graphics.</span>
+                         <span>My skills range from technical areas like Web Development and Java to creative fields like Photo Editing and Poster Creation using Canva. I thrive on bringing ideas to life, whether through code or design, and I am always eager to learn and take on new challenges.</span>
+                     </p>
+                     <div class="mt-8">
+                         <a href="#contact" class="btn-primary">Contact Me</a>
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+
+        <section id="services" class="py-20 lg:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16"><h2 class="text-4xl sm:text-5xl font-bold">My <span class="text-cyan-accent">Services</span></h2></div>
+                <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                    
+                    <div class="service-card p-8 text-center">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-cyan-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Web Development</h3>
+                            <p class="text-gray-400">Building responsive and user-friendly websites from scratch.</p>
+                            <p class="text-2xl font-bold text-white mt-4">Based on Project</p>
+                        </div>
+                        <a href="#contact" class="btn-purchase">Get a Quote</a>
+                    </div>
+                    
+                    <div class="service-card p-8 text-center">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-cyan-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Canva Poster Creation</h3>
+                            <p class="text-gray-400">Designing eye-catching posters for events and promotions.</p>
+                            <p class="text-2xl font-bold text-white mt-4">₹1,000</p>
+                        </div>
+                        <a href="#" class="btn-purchase">Purchase Now</a>
+                    </div>
+
+                    <div class="service-card p-8 text-center">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-cyan-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L15.232 5.232z"></path></svg>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Photo Editing</h3>
+                            <p class="text-gray-400">Enhancing and retouching photos for a clean, professional look.</p>
+                            <p class="text-2xl font-bold text-white mt-4">₹500</p>
+                        </div>
+                        <a href="#" class="btn-purchase">Purchase Now</a>
+                    </div>
+                    
+                    <div class="service-card p-8 text-center">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-cyan-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Domain & Hosting</h3>
+                            <p class="text-gray-400">Assisting with domain registration and website hosting setup.</p>
+                            <p class="text-2xl font-bold text-white mt-4">₹4,000</p>
+                        </div>
+                        <a href="#" class="btn-purchase">Purchase Now</a>
+                    </div>
+                    
+                    <div class="service-card p-8 text-center">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-cyan-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Marketing</h3>
+                            <p class="text-gray-400">Digital marketing services to boost your online presence.</p>
+                            <p class="text-2xl font-bold text-white mt-4">₹5,000</p>
+                        </div>
+                        <a href="#" class="btn-purchase">Purchase Now</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section id="skills" class="py-20 lg:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl sm:text-5xl font-bold">My <span class="text-cyan-accent">Skills</span></h2>
+                </div>
+                <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div class="skill-item"><i class="devicon-html5-plain text-6xl"></i><h4 class="font-semibold text-lg">HTML</h4></div>
+                    <div class="skill-item"><i class="devicon-css3-plain text-6xl"></i><h4 class="font-semibold text-lg">CSS</h4></div>
+                    <div class="skill-item"><i class="devicon-javascript-plain text-6xl"></i><h4 class="font-semibold text-lg">JavaScript</h4></div>
+                    <div class="skill-item"><i class="devicon-java-plain text-6xl"></i><h4 class="font-semibold text-lg">Java</h4></div>
+                    <div class="skill-item"><svg class="w-14 h-14" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg><h4 class="font-semibold text-lg">Web Development</h4></div>
+                    <div class="skill-item"><svg class="w-14 h-14" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg><h4 class="font-semibold text-lg">Photo Editing</h4></div>
+                    <div class="skill-item"><svg class="w-14 h-14" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg><h4 class="font-semibold text-lg">Poster Creation</h4></div>
+                    <div class="skill-item"><svg class="w-14 h-14" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path></svg><h4 class="font-semibold text-lg">Digital Marketing</h4></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tools" class="py-20 lg:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl sm:text-5xl font-bold">My <span class="text-cyan-accent">Tools</span></h2>
+                </div>
+                <div id="tools-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
+                    <div class="skill-item"><i class="devicon-git-plain text-6xl"></i><h4 class="font-semibold text-lg">Git</h4></div>
+                    <div class="skill-item"><i class="devicon-github-original text-6xl"></i><h4 class="font-semibold text-lg">GitHub</h4></div>
+                    <div class="skill-item"><i class="devicon-vscode-plain text-6xl"></i><h4 class="font-semibold text-lg">VS Code</h4></div>
+                    <div class="skill-item"><i class="devicon-intellij-plain text-6xl"></i><h4 class="font-semibold text-lg">IntelliJ IDEA</h4></div>
+                    <div class="skill-item"><i class="devicon-photoshop-plain text-6xl"></i><h4 class="font-semibold text-lg">Photoshop</h4></div>
+                    <div class="skill-item"><svg class="w-14 h-14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M148 168h28v28h-28z" fill="#9a4bff"></path><path d="M112 204h28v28h-28z" fill="#9a4bff"></path><path d="M148 204h28v28h-28z" fill="#9a4bff"></path><path d="M112 168h28v28h-28z" fill="#00c4cc"></path><path d="M128 24a104 104 0 10104 104A104.11 104.11 0 00128 24zm40 172a12 12 0 01-12 12h-24a12 12 0 01-12-12v-24a12 12 0 0112-12h24a12 12 0 0112 12zm0-40a12 12 0 01-12 12h-24a12 12 0 01-12-12v-24a12 12 0 0112-12h24a12 12 0 0112 12zm-40 40a12 12 0 01-12 12H92a12 12 0 01-12-12v-24a12 12 0 0112-12h24a12 12 0 0112 12zm0-40a12 12 0 01-12 12H92a12 12 0 01-12-12v-24a12 12 0 0112-12h24a12 12 0 0112-12z"></path></svg><h4 class="font-semibold text-lg">Canva</h4></div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="py-20 lg:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl sm:text-5xl font-bold">My <span class="text-cyan-accent">Projects</span></h2>
+                </div>
+                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <a href="https://github.com/Rakeshsharma2025/Simple-BusReservation.git" target="_blank" class="block group">
+                        <div class="project-card p-0 overflow-hidden h-full flex flex-col">
+                            <img src="https://placehold.co/600x400/0c0a18/0ef?text=Bus+Reservation" alt="Bus Reservation Project" class="w-full h-48 object-cover">
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="text-xl font-bold text-cyan-accent mb-2">Simple-BusReservation</h3>
+                                <p class="text-gray-300 text-sm flex-grow">A console-based bus reservation system built with Java. This application allows users to book, cancel, and view bus ticket availability, demonstrating core Java and data management skills.</p>
+                                <div class="mt-4 text-xs font-semibold text-gray-400">
+                                    <span class="inline-block bg-gray-700/50 rounded-full px-3 py-1 mr-2">Java</span>
+                                    <span class="inline-block bg-gray-700/50 rounded-full px-3 py-1">MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Rakeshsharma2025/Home-Town-Website.git" target="_blank" class="block group">
+                         <div class="project-card p-0 overflow-hidden h-full flex flex-col">
+                            <img src="https://placehold.co/600x400/0c0a18/0ef?text=Hometown+Website" alt="Hometown Website Project" class="w-full h-48 object-cover">
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="text-xl font-bold text-cyan-accent mb-2">Home-Town-Website</h3>
+                                <p class="text-gray-300 text-sm flex-grow">A responsive website dedicated to my hometown, built with HTML, CSS, and JavaScript. It showcases local attractions and history, highlighting front-end development and UI design abilities.</p>
+                                <div class="mt-4 text-xs font-semibold text-gray-400">
+                                    <span class="inline-block bg-gray-700/50 rounded-full px-3 py-1 mr-2">HTML</span>
+                                    <span class="inline-block bg-gray-700/50 rounded-full px-3 py-1 mr-2">CSS</span>
+                                    <span class="inline-block bg-gray-700/50 rounded-full px-3 py-1">JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Rakeshsharma2025/Portfolio.git" target="_blank" class="block group">
+                        <div class="project-card p-0 overflow-hidden h-full flex flex-col">
+                            <img src="https://placehold.co/600x400/0c0a18/0ef?text=Personal+Portfolio" alt="Personal Portfolio Project" class="w-full h-48 object-cover">
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="text-xl font-bold text-cyan-accent mb-2">Personal Portfolio</h3>
+                                <p class="text-gray-300 text-sm flex-grow">A professional personal portfolio website featuring smooth GSAP animations, glassmorphism design, and EmailJS integration. Built to showcase technical skills and creative design work in a responsive layout.</p>
+                                <div class="mt-4 text-xs font-semibold text-gray-400">
+                                    <span class="inline-block bg-gray-700/50 rounded-full px-3 py-1 mr-2">Tailwind CSS</span>
+                                    <span class="inline-block bg-gray-700/50 rounded-full px-3 py-1 mr-2">GSAP</span>
+                                    <span class="inline-block bg-gray-700/50 rounded-full px-3 py-1">JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Rakeshsharma2025/TicTacToe.git" target="_blank" class="block group">
+                        <div class="project-card p-0 overflow-hidden h-full flex flex-col">
+                            <img src="https://placehold.co/600x400/0c0a18/0ef?text=Tic+Tac+Toe" alt="Tic Tac Toe Game" class="w-full h-48 object-cover">
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="text-xl font-bold text-cyan-accent mb-2">TicTacToe</h3>
+                                <p class="text-gray-300 text-sm flex-grow">The classic Tic-Tac-Toe game implemented in Java. This project features a simple GUI and game logic, demonstrating object-oriented programming principles and algorithm design.</p>
+                                <div class="mt-4 text-xs font-semibold text-gray-400">
+                                    <span class="inline-block bg-gray-700/50 rounded-full px-3 py-1 mr-2">Java</span>
+                                    <span class="inline-block bg-gray-700/50 rounded-full px-3 py-1">Swing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-20 lg:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16"><h2 class="text-4xl sm:text-5xl font-bold">My <span class="text-cyan-accent">Journey</span></h2></div>
+                <div class="timeline-container max-w-4xl mx-auto">
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="experience-item"><h4 class="font-semibold text-xl text-cyan-accent">Web Developer</h4><p class="text-gray-300 mb-2">Freelance / Personal Projects — (1 Year Experience)</p><ul class="list-disc list-inside text-gray-400 text-sm space-y-1"><li>Built and maintained responsive websites using HTML, CSS, JavaScript, and React.</li><li>Created dynamic user interfaces and optimized website performance.</li><li>Experienced in deploying websites using GitHub Pages, Netlify, and Vercel.</li></ul></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="experience-item"><h4 class="font-semibold text-xl text-cyan-accent">Java Developer</h4><p class="text-gray-300 mb-2">Personal / Academic Projects — (1 Year Experience)</p><ul class="list-disc list-inside text-gray-400 text-sm space-y-1"><li>Developed backend logic using Core Java and Object-Oriented Programming (OOP) principles.</li><li>Built console-based and GUI-based projects using Java Swing / JavaFX.</li><li>Familiar with Java Collections Framework, Multithreading, and Basic JDBC.</li></ul></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="experience-item"><h4 class="font-semibold text-xl text-cyan-accent">Canva Designer</h4><p class="text-gray-300 mb-2">Creative Design Experience</p><ul class="list-disc list-inside text-gray-400 text-sm space-y-1"><li>Designed professional posters, banners, and social media content using Canva.</li><li>Created visually appealing layouts for personal branding and client projects.</li><li>Specialized in color theory, typography, and modern minimal design.</li></ul></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="experience-item"><h4 class="font-semibold text-xl text-cyan-accent">National Level Hackathon Organizer</h4><p class="text-gray-300 mb-2">Erode Sengunthar Engineering College</p><ul class="list-disc list-inside text-gray-400 text-sm space-y-1"><li>Served as the Main Website Developer for the event.</li><li>Designed and created all promotional posters and digital assets.</li><li>Built websites and posters for various other college events.</li></ul></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="experience-item"><h4 class="font-semibold text-xl text-cyan-accent">Erode Sengunthar Engineering College</h4><p class="text-gray-300">B.Tech - Information Technology</p><p class="text-gray-400 text-sm">2022 - Present</p></div></div>
+                    <div class="timeline-item"><div class="timeline-dot"></div><div class="experience-item"><h4 class="font-semibold text-xl text-cyan-accent">Jayam Vidhyalaya Matriculation Higher Secondary School</h4><p class="text-gray-300">High School Education</p><p class="text-gray-400 text-sm">2008 - 2022</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="min-h-screen flex items-center py-20 lg:py-32">
+            <div class="max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="mb-12">
+                    <h2 class="text-4xl sm:text-5xl font-bold">Contact <span class="text-cyan-accent">Me!</span></h2>
+                </div>
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <input type="text" name="name" required placeholder="Full Name" class="contact-input">
+                        <input name="email" type="email" required placeholder="Email Address" class="contact-input">
+                        <input type="tel" name="phone" placeholder="Mobile Number" class="contact-input">
+                        <input type="text" name="subject" required placeholder="Email Subject" class="contact-input">
+                    </div>
+                    <div>
+                        <textarea name="message" rows="7" required placeholder="Your Message" class="contact-input"></textarea>
+                    </div>
+                    <div class="text-center pt-4">
+                        <button id="submit-button" type="submit" class="btn-primary w-full sm:w-auto">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-10 border-t border-gray-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+            <div class="footer-social mb-6">
+                <a href="https://www.instagram.com/rakeshsharma__k?igsh=MWs1djZhYTJjc25odg==" target="_blank" aria-label="Instagram">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.116 0-3.483.01-4.713.065-2.61.12-3.832 1.34-3.951 3.951-.055 1.228-.066 1.597-.066 4.713s.01 3.485.066 4.713c.12 2.61 1.34 3.832 3.951 3.951 1.23.055 1.597.066 4.713.066s3.483-.01 4.713-.066c2.61-.12 3.832-1.34 3.951-3.951.055-1.228.066-1.597-.066-4.713s-.01-3.485-.066-4.713c-.12-2.61-1.34-3.832-3.951-3.951C15.483 3.975 15.116 3.965 12 3.965zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zm0 1.802a1.948 1.948 0 110 3.896 1.948 1.948 0 010-3.896zM16.95 6.4a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/rakeshsharma23/" target="_blank" aria-label="LinkedIn">
+                    <svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                </a>
+                <a href="https://github.com/Rakeshsharma2025" target="_blank" aria-label="GitHub">
+                    <svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+                </a>
+                <a href="#" target="_blank" aria-label="X/Twitter">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+            <p>&copy; 2025 Rakesh Sharma. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button id="back-to-top" class="fixed bottom-8 right-8 z-40 bg-cyan-accent w-12 h-12 rounded-full flex items-center justify-center text-[#1f242d] shadow-lg transform transition-all duration-300 hover:scale-110 opacity-0"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg></button>
+
+    <div id="alert-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden opacity-0">
+        <div class="bg-[#262b3f] rounded-lg shadow-xl p-6 w-full max-w-sm text-center border border-cyan-accent">
+            <p id="alert-message" class="text-lg text-white"></p>
+            <button id="alert-close" class="mt-6 btn-primary">Close</button>
+        </div>
+    </div>
+    
+    <a href="https://wa.me/9944681067?" 
+       target="_blank" 
+       class="fixed bottom-24 right-8 z-40 bg-[#25D366] w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg transform transition-all duration-300 hover:scale-110"
+       title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+    
+    <script src="script.js"></script>
+</body>
+</html>
