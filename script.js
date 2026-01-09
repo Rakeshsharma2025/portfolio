@@ -4,13 +4,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // Make sure you have the EmailJS library loaded in your HTML head before this script runs
     (function() { emailjs.init("KHvTYzwjN1E5G_cuB"); })();
 
-    // === CONTACT FORM LOGIC ===
+    // === CACHED DOM ELEMENTS ===
     const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
+    const submitButton = document.getElementById('submit-button');
+    const alertModal = document.getElementById('alert-modal');
+    const alertMessage = document.getElementById('alert-message');
+    const alertClose = document.getElementById('alert-close');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const backToTopButton = document.getElementById('back-to-top');
+    const typedTextElement = document.getElementById('typed-text');
+
+    // === CONTACT FORM LOGIC ===
+    if (contactForm && submitButton) {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
             
-            const submitButton = document.getElementById('submit-button');
             const originalText = submitButton.textContent;
             
             submitButton.disabled = true;
@@ -32,10 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // === CUSTOM ALERT MODAL LOGIC ===
-    const alertModal = document.getElementById('alert-modal');
-    const alertMessage = document.getElementById('alert-message');
-    const alertClose = document.getElementById('alert-close');
-    
     function showAlert(message) {
         if (alertModal && alertMessage) {
             alertMessage.textContent = message;
@@ -46,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    if (alertClose) {
+    if (alertClose && alertModal) {
         alertClose.addEventListener('click', () => {
             alertModal.classList.add('opacity-0');
             setTimeout(() => alertModal.classList.add('hidden'), 300);
@@ -54,10 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // === MOBILE MENU TOGGLE ===
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
-
     if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', () => { 
             mobileMenu.classList.toggle('hidden'); 
@@ -73,7 +75,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
     // === TYPED.JS ANIMATION ===
-    if (document.getElementById('typed-text')) {
+    if (typedTextElement) {
+        // Typed.js works with both selector strings and DOM elements
+        // Using selector string for maximum compatibility
         new Typed('#typed-text', {
             strings: ['Web Developer', 'Java Developer', 'Creative Designer'],
             typeSpeed: 70, 
@@ -90,9 +94,9 @@ document.addEventListener('DOMContentLoaded', function () {
         function animateGrid(selector) {
             const elements = document.querySelectorAll(selector);
             if (elements.length > 0) {
-                gsap.from(selector, {
+                gsap.from(elements, {
                     scrollTrigger: { 
-                        trigger: selector, 
+                        trigger: elements[0], 
                         start: "top 85%", 
                         toggleActions: "play none none none", 
                         once: true 
@@ -112,16 +116,24 @@ document.addEventListener('DOMContentLoaded', function () {
         animateGrid("#services .service-card");
     }
 
-    // === BACK TO TOP BUTTON ===
-    const backToTopButton = document.getElementById('back-to-top');
+    // === BACK TO TOP BUTTON (with throttling) ===
     if (backToTopButton) {
+        let scrollTimeout;
+        let ticking = false;
+        
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) { 
-                backToTopButton.classList.remove('opacity-0'); 
-            } else { 
-                backToTopButton.classList.add('opacity-0'); 
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    if (window.scrollY > 300) { 
+                        backToTopButton.classList.remove('opacity-0'); 
+                    } else { 
+                        backToTopButton.classList.add('opacity-0'); 
+                    }
+                    ticking = false;
+                });
+                ticking = true;
             }
-        });
+        }, { passive: true });
         
         backToTopButton.addEventListener('click', () => { 
             window.scrollTo({ top: 0, behavior: 'smooth' }); 
