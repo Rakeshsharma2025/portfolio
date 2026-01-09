@@ -76,7 +76,9 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // === TYPED.JS ANIMATION ===
     if (typedTextElement) {
-        new Typed(typedTextElement, {
+        // Typed.js works with both selector strings and DOM elements
+        // Using selector string for maximum compatibility
+        new Typed('#typed-text', {
             strings: ['Web Developer', 'Java Developer', 'Creative Designer'],
             typeSpeed: 70, 
             backSpeed: 50, 
@@ -117,16 +119,20 @@ document.addEventListener('DOMContentLoaded', function () {
     // === BACK TO TOP BUTTON (with throttling) ===
     if (backToTopButton) {
         let scrollTimeout;
+        let ticking = false;
+        
         window.addEventListener('scroll', () => {
-            if (scrollTimeout) return;
-            scrollTimeout = setTimeout(() => {
-                if (window.scrollY > 300) { 
-                    backToTopButton.classList.remove('opacity-0'); 
-                } else { 
-                    backToTopButton.classList.add('opacity-0'); 
-                }
-                scrollTimeout = null;
-            }, 100);
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    if (window.scrollY > 300) { 
+                        backToTopButton.classList.remove('opacity-0'); 
+                    } else { 
+                        backToTopButton.classList.add('opacity-0'); 
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
         }, { passive: true });
         
         backToTopButton.addEventListener('click', () => { 
