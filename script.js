@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // === TYPED.JS ANIMATION ===
     if (typedTextElement) {
-        new Typed('#typed-text', {
+        new Typed(typedTextElement, {
             strings: ['Web Developer', 'Java Developer', 'Creative Designer'],
             typeSpeed: 70, 
             backSpeed: 50, 
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (elements.length > 0) {
                 gsap.from(elements, {
                     scrollTrigger: { 
-                        trigger: selector, 
+                        trigger: elements[0], 
                         start: "top 85%", 
                         toggleActions: "play none none none", 
                         once: true 
