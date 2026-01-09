@@ -154,6 +154,7 @@ body::before {
 .project-card:hover {
     border-color: #0ef;
     transform: translateY(-5px);
+    will-change: transform;
 }
 
 /* ================= SKILLS ================= */
@@ -176,6 +177,7 @@ body::before {
     border-color: #0ef;
     transform: translateY(-5px);
     background-color: rgba(50, 57, 70, 0.8);
+    will-change: transform;
 }
 
 .skill-item i,
@@ -196,6 +198,20 @@ header {
     background-color: rgba(12, 10, 24, 0.7);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid rgba(118, 118, 128, 0.3);
+}
+
+/* Reduce backdrop-filter on mobile for better performance */
+@media (max-width: 768px) {
+    header {
+        backdrop-filter: blur(3px);
+    }
+    
+    .service-card,
+    .experience-item,
+    .project-card,
+    .skill-item {
+        backdrop-filter: blur(2px);
+    }
 }
 
 /* ================= CONTACT ================= */
